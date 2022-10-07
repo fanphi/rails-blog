@@ -8,6 +8,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
+    # debug
+    @article = Article.find(params[:id])
   end
 
   # GET /articles/new
