@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+
+  #before action läggs till tillsammans med private så att vi inte behöver upprepa methods
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles or /articles.json
@@ -9,7 +11,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1 or /articles/1.json
   def show
     # debug
-    @article = Article.find(params[:id])
+    # @article = Article.find(params[:id])
   end
 
   def index
@@ -23,11 +25,12 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    @article = Article.find(params[:id]) 
+    # @article = Article.find(params[:id]) 
     # redirect_to edit_article_path
   end
 
   # POST /articles or /articles.json
+  # utan private article_params
   def create
     @article = Article.new(params.require(:article).permit(:title, :description))
     if @article.save
@@ -39,9 +42,11 @@ class ArticlesController < ApplicationController
   end
 
   # PATCH/PUT /articles/1 or /articles/1.json
+
+  #Med private article_params
   def update
     @article = Article.find(params[:id])
-   if @article.update(params.require(:article).permit(:title, :description))
+   if @article.update(article_params)
     flash[:notice] = "Article was updated successfully"
     redirect_to @article
    else
@@ -60,7 +65,7 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
-    @article = Article.find(params[:id])
+    # @article = Article.find(params[:id]) #Vi har lagt till set_article i private och kan därför ta bort denna rad
     @article.destroy
     redirect_to articles_path
 
@@ -71,12 +76,12 @@ class ArticlesController < ApplicationController
   end
 
   private
-  #   # Use callbacks to share common setup or constraints between actions.
+  #private ska alltid vara längst ner
+
     def set_article
       @article = Article.find(params[:id])
     end
-
-  #   # Only allow a list of trusted parameters through.
+ 
     def article_params
       params.require(:article).permit(:title, :description)
     end
