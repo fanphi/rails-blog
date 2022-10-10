@@ -24,6 +24,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id]) 
+    # redirect_to edit_article_path
   end
 
   # POST /articles or /articles.json
