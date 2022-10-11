@@ -37,3 +37,8 @@ html, body {
   #sticky-footer{
     flex-shrink: none;
   }
+
+#delete-btn.btn.btn-outline-danger{
+    display: inline;
+    
+}
