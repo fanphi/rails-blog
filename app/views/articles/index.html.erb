@@ -1,10 +1,4 @@
-<div id="page-content">
 <h1 class="text-center mt-4">Listing all articles</h1>
-
-
-<p>
-  <%= link_to "Create new article", new_article_path%>
-</p>
 <div class="container">
   <% @articles.each do |article|%>
     <div class="row justify-content-md-center ">
@@ -29,5 +23,4 @@
        </div>
       </div>
   <% end %>
-</div>
 </div>
