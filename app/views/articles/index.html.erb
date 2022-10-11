@@ -19,7 +19,7 @@
             <%= link_to "View", article_path(article), class: "btn btn-outline-success" %></a>
             <%= link_to "Edit", edit_article_path(article), method: :edit, class: "btn btn-outline-info" %>
           
-            <%= button_to 'Delete', article_path(article), method: :delete, onclick: "return confirm('Are you sure?')" , class: "btn btn-outline-danger", id: "delete-btn"%>
+            <%= button_to 'Delete', article_path(article), method: :delete, onclick: "return confirm('Are you sure?')" , class: "btn btn-outline-danger mt-1", id: "delete-btn"%>
            
           </div>
           <div class="card-footer text-muted">
