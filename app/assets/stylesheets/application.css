@@ -22,8 +22,8 @@
 }
 
 .jumbotron{
-    background-image: url("background.jpg");
-    /* background-size: cover; */
+    background-image: url("test.jpg");
+    background-size: cover;
 }
 
 html, body {
@@ -40,5 +40,11 @@ html, body {
 
 #delete-btn.btn.btn-outline-danger{
     display: inline;
+    
+}
+
+#btn-container, #new-btn-container{
+    display: flex;
+    justify-content: center;
     
 }
