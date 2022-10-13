@@ -48,3 +48,8 @@ html, body {
     justify-content: center;
     
 }
+
+#logout-btn{
+  border: none;
+  background: none;
+}
