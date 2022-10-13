@@ -35,7 +35,9 @@
             <li>
             <%= link_to 'Edit your profile', edit_user_path(current_user), class: "dropdown-item" %>
             </li>
-            <li><a class="dropdown-item" href="/articles/new">Create new article</a></li>
+            <li>
+            <%= button_to "Delete profile", user_path(current_user), class: "dropdown-item text-danger", method: :delete, onclick: "return confirm('Are you sure?')" %>
+            </li>
          
           </ul>
         </li>
