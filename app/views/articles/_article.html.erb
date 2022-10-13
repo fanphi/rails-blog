@@ -13,7 +13,7 @@
             <p class="card-text"><%= truncate(article.description, length: 100) %></p>
             <div id="btn-container">
             <%= link_to "View", article_path(article), class: "btn btn-outline-success m-1" %></a>
-            <% if logged_in? && article.user == current_user %>
+            <% if logged_in? && (article.user == current_user || current_user.admin?) %>
               <%= link_to "Edit", edit_article_path(article), method: :edit, class: "btn btn-outline-info m-1" %>
               <%= button_to 'Delete', article_path(article), method: :delete, onclick: "return confirm('Are you sure?')" , class: "btn btn-outline-danger m-1", id: "delete-btn"%>
             <% end %>
