@@ -43,7 +43,7 @@ html, body {
     
 }
 
-#btn-container, #new-btn-container{
+#btn-container, #new-btn-container, #btn-container-users{
     display: flex;
     justify-content: center;
     

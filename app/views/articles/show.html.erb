@@ -16,7 +16,7 @@
            
             <div class="card-text text-left"><%= simple_format(@article.description) %></div>
 
-            <% if logged_in? && @article.user == current_user %>
+            <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
             <div id="new-btn-container">
             <%= link_to "Edit", edit_article_path(@article), method: :edit, class: "btn btn-outline-info m-1" %>
           
